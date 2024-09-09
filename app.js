@@ -1,8 +1,11 @@
+var background;
+
 function addPost() {
   var postTitle = document.getElementById("postTitle").value;
   var postDesc = document.getElementById("postDesc").value;
   var newPost = document.getElementById("newPost");
-  console.log("newPost:", newPost); // Debugging log
+
+
 
   if (!newPost) {
     console.error("Element with id 'newPost' not found!");
@@ -24,7 +27,7 @@ function addPost() {
             <div class="card-header fontStyle">
                 @Posts
             </div>
-            <div class="card-body">
+            <div class="card-body" style="background-image: url('${background}');">
                 <h5 class="card-title fontStyle" id="tile-${postId}">${postTitle}</h5>
                 <p class="card-text fontStyle" id= "desc-${postId}">${postDesc}</p>
             </div>
@@ -49,23 +52,24 @@ function addPost() {
 function dltPost(event) {
   var dlt = event.target.parentNode.parentNode;
   Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-    dlt.remove();
-    Swal.fire({
-      title: "Deleted!",
-      text: "Your file has been deleted.",
-      icon: "success"
-    });
-  }
-});}
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      dlt.remove();
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success"
+      });
+    }
+  });
+}
 
 
 async function editPost(postId) {
@@ -117,4 +121,13 @@ async function editPost(postId) {
       });
     }
   }
+}
+function selectImg(src) {
+  background = src
+  var images = document.getElementsByClassName('small-Img')
+  for (var i = 0; i < images.length; i++){
+    images[i].className=' small-Img'
+  }
+    event.target.className += " selectedImg"
+
 }

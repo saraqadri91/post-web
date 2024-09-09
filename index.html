@@ -30,10 +30,27 @@
                             <input type="text" class="form-control colour" id="postTitle" aria-describedby="titleHelp">
                         </div>
                         <div class="form-floating fontStyle colour">
-                            <textarea class="form-control colour" placeholder="Leave a comment here" id="postDesc" style="height: 100px"></textarea>
+                            <textarea class="form-control colour" placeholder="Leave a comment here" id="postDesc"
+                                style="height: 100px"></textarea>
                             <label for="postDesc">Description</label>
+
+                            <div class="mt-3">
+                                <div class="images">
+                                    <img src="images/bg1.avif" alt="" onclick="selectImg('images/bg1.avif')"
+                                        class="small-Img">
+                                    <img src="images/bg2.jfif" alt="" onclick="selectImg('images/bg2.jfif')"
+                                        class="small-Img">
+                                    <img src="images/bg3.jpg" alt="" onclick="selectImg('images/bg3.jpg')"
+                                        class="small-Img">
+                                    <img src="images/bg4.jpg" alt="" onclick="selectImg('images/bg4.jpg')"
+                                        class="small-Img">
+                                    <img src="images/bgg5.avif" alt="" onclick="selectImg('images/bgg5.avif')"
+                                        class="small-Img">
+                                </div>
+                            </div>
                         </div>
-                        <button type="button" onclick="addPost()" class="btn mt-4 fontStyle color-blue submit-btn">Submit</button>
+                        <button type="button" onclick="addPost()"
+                            class="btn mt-4 fontStyle color-blue submit-btn">Submit</button>
                     </form>
                 </div>
             </div>
